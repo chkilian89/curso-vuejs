@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="app">
+            <h1>{{ title }}</h1>
+            <p>{{ description }}</p>
+            <p>{{ isActive ? 'Sim' : 'Não' }}</p>
+            <a :href="url " v-bind:tilte="textAcademy">{{ textAcademy }}</a>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data : {
+                    title : 'Meu Titilo',
+                    description : 'Sub title',
+                    isActive: true,
+                    url: 'https://academy.especializati.com.br/',
+                    textAcademy : 'EspecializaTi Academy'
+                }
+            })
+        </script>
+    </body>
+</html>
