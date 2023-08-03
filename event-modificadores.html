@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Enventos Teclado Modificadoras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="app">
+        <a :hre="urlLink" @click.prevent="showAlert">{{ testLink }}</a>
+            <form action="#" methos="post" @submit.prevent="showAlert">
+                <input type="text" placeholder="">
+
+                <button type="submit">Enviar Formulário</button>
+            </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                testLink: 'EspecializaTi Academy',
+                urlLink: 'https://academy.especializati.com.br'
+            },
+            methods:{
+                showAlert (event) {
+                    alert('Clicou no link')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

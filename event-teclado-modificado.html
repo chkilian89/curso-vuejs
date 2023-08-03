@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-    <title>Enventos Teclado</title>
+    <title>Enventos Teclado Modificadoras do Sistema no Vue Js</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <div id="app">
-        <input type="text" @keyup.enter.tab="changeValue">
-        <p>{{valueText}}</p>
+        <div @click.ctrl.exact="testeEvent">
+            Clique Aqui !!
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
@@ -18,11 +19,11 @@
         new Vue({
             el: '#app',
             data: {
-                valueText: ''
+                
             },
             methods:{
-                changeValue (event) {
-                    this.valueText = event.target.value
+                testeEvent () {
+                    alert('Teste')
                 }
             }
         })
