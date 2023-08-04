@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Propriedades Observadoras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="app">
+        <button @click="count++">Aumentar</button>
+
+        <input type="text" v-model="count">
+
+        <p>{{ count }}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                count: 0
+            },
+            watch: {
+                count : function(value){
+                    var vm = this
+                    setTimeout(() => {
+                        vm.count = 0
+                    }, 3000);
+                }
+            },
+            methods:{
+                
+            },
+            computed: {
+               
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+</body>
+
+</html>

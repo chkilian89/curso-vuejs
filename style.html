@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Propriedades Observadoras</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .active{ background: green; }
+        .no-active{ background: red; }
+        .default { color: yellow;}
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="isActive= !isActive">Alterar Class</button>
+        <div :class="{active : isActive }">
+            Exemplo Style VueJs
+        </div>
+        <div :class="isActive ? 'active' : 'no-active' ">
+            Exemplo Style VueJs 2
+        </div>
+
+        <div class="default" :class="isActive ? 'active' : 'no-active' ">
+            Exemplo Style VueJs 3
+        </div>
+
+        <div :class="['default', isActive ? 'active' : 'no-active' ]">
+            Exemplo Style VueJs 3/2
+        </div>
+
+        <div :class="classObject">
+            Exemplo Style VueJs 4
+        </div>
+
+        <div :style="{display:['-webkit-flex', '-moz-flex', 'flex']}">
+            Exemplo Style VueJs 5
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                isActive: true,
+                classObject:{
+                    active: false,
+                    'text-read': true,
+                    'color-white': false
+                }
+            },
+            watch: {
+                
+            },
+            methods:{
+                
+            },
+            computed: {
+               
+            },
+            methods: {
+                
+            }
+        })
+    </script>
+</body>
+
+</html>
