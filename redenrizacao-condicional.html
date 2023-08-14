@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Renderização Condicional Vue JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div id="app">
+           <div v-if="number < 12">
+                {{ textEmplo }}
+           </div>
+           <div v-else-if="number == 12">
+                É igual
+           </div>
+           <div v-else=>
+                Caiu no else
+           </div>
+            <div v-if="isActive">
+                Ativo
+            </div>
+            <div v-else>
+                Não Ativo
+            </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data : {
+                    number: 11,
+                    isActive: true,
+                    textEmplo: "Teste Databing"
+                }
+            })
+        </script>
+    </body>
+</html>

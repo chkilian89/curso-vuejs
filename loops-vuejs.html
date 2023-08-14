@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Loops Vue JS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        .active{
+            background-color: green;
+        }
+    </style>
+    <body>
+        <div id="app">
+
+            <ul>
+                <li v-for="i in 10">{{ i }}</li>
+            </ul>
+            <hr>
+            <ul>
+                <li v-for="product in products">{{ product }}</li>
+            </ul>
+            <hr>
+            <ul>
+                <li v-for="(task, index)  in tasks" :class="{'active': task.isActive}" >
+                    {{ index }} -> {{ task.id }} - {{ task.name }}
+                </li>
+            </ul>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <script>
+            new Vue({
+                el: '#app',
+                data : {
+                    products : [
+                        'Tv', 'Geladeira', 'Microondas', 'Rádio'
+                    ],
+                    tasks: [
+                        {id: 1, name: 'Lavar louça', isActive: true},
+                        {id: 2, name: 'Lavar Carro', isActive: false },
+                        {id: 3, name: 'Lavar Moto', isActive: false },
+                        {id: 4, name: 'Lavar Banheiro', isActive: false },
+
+                    ]
+                }
+            })
+        </script>
+    </body>
+</html>
